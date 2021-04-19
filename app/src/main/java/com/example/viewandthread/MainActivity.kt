@@ -9,6 +9,7 @@ import android.view.MotionEvent
 import android.widget.ImageView
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     var number: Int = 0
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         FunAutoMinus()
         SetTextColor()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -107,15 +109,17 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-    fun FunAutoMinus(){
-        hand.postDelayed(RunnableAutoMinus,100)
+
+    fun FunAutoMinus() {
+        hand.postDelayed(RunnableAutoMinus, 10)
     }
+
     fun FunAutoPlus() {
-        hand.postDelayed(RunnableAutoPlus, 100)
+        hand.postDelayed(RunnableAutoPlus, 10)
     }
 
     fun RunToZero() {
-        hand.postDelayed(run, 100)
+        hand.postDelayed(run, 10)
     }
 
     fun Minus() {
@@ -135,16 +139,11 @@ class MainActivity : AppCompatActivity() {
         hand.postDelayed(run1, 2000)
         SetTextColor()
     }
-    fun SetTextColor(){
-        if(number == 0){
-            tvNumber.setTextColor(Color.BLACK)
-        }
-        if (number % 150 == 0) {
-            tvNumber.setTextColor(Color.BLUE)
-        }else if(number % 250 == 0){
-            tvNumber.setTextColor(Color.RED)
-        }else if(number % 350 == 0){
-            tvNumber.setTextColor(Color.YELLOW)
-        }
+
+    fun SetTextColor() {
+        var random = Random()
+        val color: Int =
+            Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256))
+        if (number % 100 == 0) tvNumber.setTextColor(color)
     }
 }

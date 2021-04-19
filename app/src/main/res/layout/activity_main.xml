@@ -15,7 +15,8 @@
         android:gravity="center"
         android:textSize="50dp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:background="#e3f6e9"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +29,9 @@
             android:layout_weight="1"
             app:layout_constraintTop_toBottomOf="@+id/tvNumber"
             app:layout_constraintRight_toLeftOf="@+id/tvNumber"
+            android:background="@drawable/my_button"
+            android:textColor="#ff0000"
+            android:layout_margin="20dp"
             android:text="-"/>
         <Button
             android:id="@+id/btnPlus"
@@ -36,6 +40,9 @@
             android:layout_weight="1"
             app:layout_constraintTop_toBottomOf="@+id/tvNumber"
             app:layout_constraintLeft_toRightOf="@+id/tvNumber"
+            android:background="@drawable/my_button"
+            android:layout_margin="20dp"
+            android:textColor="#ff0000"
             android:text="+"/>
     </LinearLayout>
 
