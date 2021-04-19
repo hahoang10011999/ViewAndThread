@@ -13,7 +13,7 @@
         android:layout_height="450dp"
         android:text="0"
         android:gravity="center"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
         android:background="#e3f6e9"/>
