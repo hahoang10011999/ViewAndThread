@@ -2,48 +2,51 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvNumber"
         android:layout_width="match_parent"
         android:layout_height="450dp"
-        android:text="0"
+        android:background="#e3f6e9"
         android:gravity="center"
+        android:text="0"
         android:textSize="50sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        android:background="#e3f6e9"/>
+        tools:ignore="MissingConstraints" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumber"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumber">
+
         <Button
             android:id="@+id/btnMinus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintTop_toBottomOf="@+id/tvNumber"
-            app:layout_constraintRight_toLeftOf="@+id/tvNumber"
-            android:background="@drawable/my_button"
-            android:textColor="#ff0000"
             android:layout_margin="20dp"
-            android:text="-"/>
+            android:layout_weight="1"
+            android:background="@drawable/my_button"
+            android:text="-"
+            android:textColor="#ff0000"
+            app:layout_constraintRight_toLeftOf="@+id/tvNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumber" />
+
         <Button
             android:id="@+id/btnPlus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintTop_toBottomOf="@+id/tvNumber"
-            app:layout_constraintLeft_toRightOf="@+id/tvNumber"
-            android:background="@drawable/my_button"
             android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_button"
+            android:text="+"
             android:textColor="#ff0000"
-            android:text="+"/>
+            app:layout_constraintLeft_toRightOf="@+id/tvNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumber" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

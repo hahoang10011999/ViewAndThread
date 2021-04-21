@@ -28,10 +28,6 @@ class MainActivity : AppCompatActivity() {
         }
         SetTextColor()
     }
-    var run1 = Runnable {
-        RunToZero()
-        SetTextColor()
-    }
     var RunnableAutoPlus = Runnable {
         number++
         tvNumber.text = number.toString()
@@ -58,12 +54,11 @@ class MainActivity : AppCompatActivity() {
             when (motionEvent.action) {
                 MotionEvent.ACTION_DOWN -> {
                     hand.removeCallbacks(run)
-                    hand.removeCallbacks(run1)
                     hand.postDelayed(RunnableAutoMinus, 1000)
                 }
                 MotionEvent.ACTION_UP -> {
                     hand.removeCallbacks(RunnableAutoMinus)
-                    hand.postDelayed(run1, 2000)
+                    hand.postDelayed(run, 2000)
                 }
             }
             false
@@ -72,12 +67,11 @@ class MainActivity : AppCompatActivity() {
             when (motionEvent.action) {
                 MotionEvent.ACTION_DOWN -> {
                     hand.removeCallbacks(run)
-                    hand.removeCallbacks(run1)
                     hand.postDelayed(RunnableAutoPlus, 1000)
                 }
                 MotionEvent.ACTION_UP -> {
                     hand.removeCallbacks(RunnableAutoPlus)
-                    hand.postDelayed(run1, 2000)
+                    hand.postDelayed(run, 2000)
                 }
             }
             false
@@ -86,7 +80,6 @@ class MainActivity : AppCompatActivity() {
             when (motionEvent.action) {
                 MotionEvent.ACTION_DOWN -> {
                     y = motionEvent.getY()
-                    hand.removeCallbacks(run1)
                     hand.removeCallbacks(run)
                 }
                 MotionEvent.ACTION_MOVE -> {
@@ -103,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                     y = motionEvent.getY()
                 }
                 MotionEvent.ACTION_UP -> {
-                    hand.postDelayed(run1, 2000)
+                    hand.postDelayed(run, 2000)
                 }
             }
             true
@@ -123,20 +116,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Minus() {
-        hand.removeCallbacks(run1)
         hand.removeCallbacks(run)
         number--
         tvNumber.text = number.toString()
-        hand.postDelayed(run1, 2000)
+        hand.postDelayed(run, 2000)
         SetTextColor()
     }
 
     fun Plus() {
-        hand.removeCallbacks(run1)
         hand.removeCallbacks(run)
         number++
         tvNumber.text = number.toString()
-        hand.postDelayed(run1, 2000)
+        hand.postDelayed(run, 2000)
         SetTextColor()
     }
 
